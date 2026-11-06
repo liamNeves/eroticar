@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Auto Eroticar — automóveis de prestígio em Liberty City.">
+  <title>Auto Eroticar | Prestigious Automobiles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+  <header class="header">
+    <a class="brand" href="#inicio" aria-label="Auto Eroticar - início">
+      <span class="brand-mark">AE</span>
+      <span class="brand-name">AUTO<span>EROTICAR</span><small>PRESTIGIOUS AUTOMOBILES</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="nav" id="mainNav">
+      <a href="#inicio">INÍCIO</a><a href="#estoque">VER CARROS</a><a href="#sobre">ACERCA DE</a><a href="#contato">CONTATE-NOS</a>
+    </nav>
+    <a class="header-phone" href="tel:2655552423">☎ <span>265-555-2423</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">PRESTIGIOUS AUTOMOBILES</p>
+        <h1>VOCÊ MERECE<br><em>DIRIGIR MELHOR.</em></h1>
+        <p class="hero-copy">Cansado de esperar pelo carro certo?<br>Bem-vindo à Auto Eroticar — você fez a escolha certa.</p>
+        <a class="btn btn-light" href="#estoque">VER CARROS <span>↗</span></a>
+      </div>
+      <div class="hero-caption"><span>01 / LIBERTY CITY</span><span>THE ART OF DRIVING</span></div>
+    </section>
+
+    <section class="intro section-wrap" id="sobre">
+      <div><p class="eyebrow dark">UMA EXPERIÊNCIA DIFERENTE</p><h2>Não é apenas um carro.<br><em>É uma declaração.</em></h2></div>
+      <p class="intro-text">A Auto Eroticar reúne automóveis selecionados para quem valoriza presença, desempenho e estilo. Encontre o modelo que combina com a sua personalidade e descubra uma nova forma de atravessar Liberty City.</p>
+    </section>
+
+    <section class="inventory" id="estoque">
+      <div class="section-wrap">
+        <div class="inventory-heading">
+          <div><p class="eyebrow">SELEÇÃO AUTO EROTICAR</p><h2>O NOSSO <em>ESTOQUE.</em></h2></div>
+          <div class="stock-count"><strong id="resultCount">07</strong><span>VEÍCULOS<br>SELECIONADOS</span></div>
+        </div>
+        <div class="toolbar">
+          <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar por modelo..." aria-label="Buscar veículos"></label>
+          <div class="filters" role="group" aria-label="Filtrar por categoria">
+            <button class="filter-btn active" data-filter="todos">TODOS</button>
+            <button class="filter-btn" data-filter="esportivo">ESPORTIVOS</button>
+            <button class="filter-btn" data-filter="luxo">LUXO</button>
+            <button class="filter-btn" data-filter="sedan">SEDÃS</button>
+          </div>
+          <select id="sortSelect" aria-label="Ordenar veículos">
+            <option value="featured">Destaques</option><option value="low">Menor preço</option><option value="high">Maior preço</option><option value="name">Nome A–Z</option>
+          </select>
+        </div>
+        <div class="car-grid" id="carGrid" aria-live="polite"></div>
+        <p class="no-results" id="noResults" hidden>Nenhum veículo encontrado. Tente outra busca.</p>
+        <p class="catalog-note">* Catálogo de demonstração inspirado no site Auto Eroticar de Grand Theft Auto IV. Os valores exibidos são os anúncios apresentados no universo do jogo; telefones e condições são fictícios para esta reprodução.</p>
+      </div>
+    </section>
+
+    <section class="statement">
+      <div class="statement-inner"><p class="eyebrow">AUTO EROTICAR • ALDERNEY CITY</p><h2>VOCÊ NÃO PRECISA<br>SEGUIR O <em>TRÂNSITO.</em></h2><a href="#contato" class="btn btn-outline">FALE COM NOSSA EQUIPE <span>↗</span></a></div>
+    </section>
+
+    <section class="contact section-wrap" id="contato">
+      <div><p class="eyebrow dark">ESTAMOS À SUA DISPOSIÇÃO</p><h2>VAMOS CONVERSAR<br><em>SOBRE SEU PRÓXIMO CARRO.</em></h2></div>
+      <div class="contact-details">
+        <div><small>TELEFONE PRINCIPAL</small><a href="tel:2655552423">265-555-2423</a></div>
+        <div><small>ENDEREÇO</small><p>Lockowski Avenue, Alderney City<br>Liberty City</p></div>
+        <div><small>HORÁRIO</small><p>Segunda a sábado • 08h às 21h</p></div>
+        <a class="btn btn-dark" href="mailto:contato@autoeroticar.example">ENVIAR MENSAGEM <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand footer-brand" href="#inicio"><span class="brand-mark">AE</span><span class="brand-name">AUTO<span>EROTICAR</span><small>PRESTIGIOUS AUTOMOBILES</small></span></a>
+    <p>© 2026 AUTO EROTICAR. PROJETO DE FÃ, SEM VÍNCULO COM A ROCKSTAR GAMES.</p>
+    <a href="#inicio" class="back-top">VOLTAR AO TOPO ↑</a>
+  </footer>
+
+  <dialog class="car-dialog" id="carDialog">
+    <button class="dialog-close" id="dialogClose" aria-label="Fechar">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>
